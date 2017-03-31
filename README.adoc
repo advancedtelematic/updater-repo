@@ -1,0 +1,19 @@
+= Quickstart projects for meta-updater
+
+== Getting started
+
+This repo is not to be cloned directly, use https://source.android.com/source/downloading.html[Android repo]
+tool instead:
+
+    repo init -u https://github.com/advancedtelematic/updater-repo.git -m <project>
+    repo sync
+
+Convenience script is provided to set up your environment to produce OTA-enabled image
+for your machine
+
+    source meta-updater/scripts/envsetup.sh <machine>
+
+Then you can build the required image (core-image-minimal is a good start)
+
+    bitbake core-image-minimal
+
