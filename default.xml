@@ -18,7 +18,7 @@
 	<!-- BSP layers -->
 	<project path="meta-raspberrypi" name="meta-raspberrypi" remote="yocto" revision="69c56754bdd6417de5b69d3c8c3684ecff8e4651" />
 	<project name="meta-intel" path="meta-intel" remote="yocto" revision="morty" />
-	<project name="AGL/meta-renesas" path="meta-renesas" remote="agl" />
+	<project name="AGL/meta-renesas" path="meta-renesas" remote="agl" revision="master" />
 
 	<!-- Extra layers -->
 	<project path="meta-rust" name="meta-rust/meta-rust" remote="github" revision="505ba7a172a3694d259d768aa837a0060c415750"/>
