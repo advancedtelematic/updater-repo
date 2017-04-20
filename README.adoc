@@ -19,9 +19,6 @@ for your machine:
 
     source meta-updater/scripts/envsetup.sh <machine> # One of minnowboard, raspberrypi, or qemux86-64
 
-Include the following in your conf/local.conf
-
-    IMAGE_INSTALL_append = " rvi-sota-client "
 
 Then you can build the required image (core-image-minimal is a good start)
 
@@ -41,8 +38,11 @@ The image file Yocto generates is shrunk down to the smallest it can be. After w
 
     sudo parted  /dev/sdX
     (parted) resizepart
-    Warning: Not all of the space available to /dev/sdh appears to be used, you can fix the GPT to use all of the space (an extra 15416128 blocks) or continue with the current setting?
-    Fix/Ignore? Fix
+    Warning: Not all of the space available to /dev/sdh appears to be used, you can fix the GPT to use all of the space (an extra 15346552 blocks) or continue with the current setting?
+    Fix/Ignore? fix
+    Partition number? 2
+    End?  [112MB]? 100%
+    (parted) quit
     sudo resize2fs /dev/sdX2
 
 Now insert the microSD card in the Minnowboard Max and boot it.
