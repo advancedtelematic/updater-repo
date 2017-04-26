@@ -17,7 +17,7 @@ Install the OpenEmbedded build dependencies:
 A convenience script is provided to set up your environment to produce OTA-enabled image
 for your machine:
 
-    source meta-updater/scripts/envsetup.sh <machine> # One of minnowboard, raspberrypi, or qemux86-64
+    source meta-updater/scripts/envsetup.sh <machine> # One of intel-corei7-64 (for Minnowboard), raspberrypi3, or qemux86-64
 
 
 Then you can build the required image (core-image-minimal is a good start)
