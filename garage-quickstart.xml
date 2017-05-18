@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+	<remote name="github" fetch="https://github.com" pushurl="ssh://git@github.com" />
+	<remote name="yocto" fetch="https://git.yoctoproject.org/git/" />
+	<remote name="openembedded" fetch="git://git.openembedded.org/" />
+	<remote name="agl" fetch="https://gerrit.automotivelinux.org/gerrit/" />
+
+	<!-- Core layers: poky and meta-oe -->
+	<project path="poky" name="poky" remote="yocto" revision="924e576b8930fd2268d85f0b151e5f68a3c2afce" />
+	<project name="meta-openembedded" path="meta-openembedded" remote="openembedded" revision="1efa5d623bc64659b57389e50be2568b1355d5f7" />
+
+	<!-- Updater layers -->
+	<project path="meta-updater" name="advancedtelematic/meta-updater" remote="github" revision="feb5a6a1da2faf088d6c5d3e3eeb07471074f0bf" />
+	<project path="meta-updater-raspberrypi" name="advancedtelematic/meta-updater-raspberrypi" remote="github" revision="736d3fdeb3750ae025f548003bde8cfcedd89dd5" />
+	<project path="meta-updater-minnowboard" name="advancedtelematic/meta-updater-minnowboard" remote="github" revision="poky-master" />
+	<project path="meta-updater-qemux86-64" name="advancedtelematic/meta-updater-qemux86-64" remote="github" revision="465dbe22259b545f432f272afcd07f69bbc8b808" />
+
+	<!-- BSP layers -->
+	<project path="meta-raspberrypi" name="meta-raspberrypi" remote="yocto" revision="a5f9b07a820d50ae5fb62e07306cd4e72d8638a9" />
+	<project name="meta-intel" path="meta-intel" remote="yocto" revision="master" />
+	<project name="AGL/meta-renesas" path="meta-renesas" remote="agl" revision="master" />
+
+	<!-- Extra layers -->
+	<project path="meta-rust" name="meta-rust/meta-rust" remote="github" revision="505ba7a172a3694d259d768aa837a0060c415750"/>
+</manifest>
+
