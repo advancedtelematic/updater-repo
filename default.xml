@@ -20,7 +20,7 @@
 	<project path="meta-updater-porter" name="meta-updater-porter" remote="ats" revision="morty" />
 
 	<!-- BSP layers -->
-	<project path="meta-raspberrypi" name="meta-raspberrypi" remote="yocto" revision="69c56754bdd6417de5b69d3c8c3684ecff8e4651" />
+	<project path="meta-raspberrypi" name="meta-raspberrypi" remote="yocto" revision="28d4404f89eb59d406b4976c0e3f5ca19137ba74" />
 	<project name="meta-intel" path="meta-intel" remote="yocto" revision="morty" />
 	<project name="AGL/meta-renesas" path="meta-renesas" remote="agl" revision="master" />
 
