@@ -4,20 +4,23 @@
 	<remote name="yocto" fetch="https://git.yoctoproject.org/git/" />
 	<remote name="openembedded" fetch="git://git.openembedded.org/" />
 	<remote name="agl" fetch="https://gerrit.automotivelinux.org/gerrit/" />
+	<remote name="ats" fetch="https://github.com/advancedtelematic" pushurl="ssh://git@github.com/advancedtelematic" />
+
+	<default sync-j="4"/>
 
 	<!-- Core layers: poky and meta-oe -->
 	<project path="poky" name="poky" remote="yocto" revision="morty" />
 	<project name="meta-openembedded" path="meta-openembedded" remote="openembedded" revision="morty" />
 
 	<!-- Updater layers -->
-	<project path="meta-updater" name="advancedtelematic/meta-updater" remote="github" revision="morty" />
-	<project path="meta-updater-raspberrypi" name="advancedtelematic/meta-updater-raspberrypi" remote="github" revision="morty" />
-	<project path="meta-updater-minnowboard" name="advancedtelematic/meta-updater-minnowboard" remote="github" revision="morty" />
-	<project path="meta-updater-qemux86-64" name="advancedtelematic/meta-updater-qemux86-64" remote="github" revision="morty" />
-	<project path="meta-updater-porter" name="advancedtelematic/meta-updater-porter" remote="github" revision="morty" />
+	<project path="meta-updater" name="meta-updater" remote="ats" revision="morty" />
+	<project path="meta-updater-raspberrypi" name="meta-updater-raspberrypi" remote="ats" revision="morty" />
+	<project path="meta-updater-minnowboard" name="meta-updater-minnowboard" remote="ats" revision="morty" />
+	<project path="meta-updater-qemux86-64" name="meta-updater-qemux86-64" remote="ats" revision="morty" />
+	<project path="meta-updater-porter" name="meta-updater-porter" remote="ats" revision="morty" />
 
 	<!-- BSP layers -->
-	<project path="meta-raspberrypi" name="meta-raspberrypi" remote="yocto" revision="69c56754bdd6417de5b69d3c8c3684ecff8e4651" />
+	<project path="meta-raspberrypi" name="meta-raspberrypi" remote="yocto" revision="28d4404f89eb59d406b4976c0e3f5ca19137ba74" />
 	<project name="meta-intel" path="meta-intel" remote="yocto" revision="morty" />
 	<project name="AGL/meta-renesas" path="meta-renesas" remote="agl" revision="master" />
 
