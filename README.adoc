@@ -62,6 +62,8 @@ Write it to a SD card:
 
 == Running the image (Qemu)
 
-    ../meta-updater-qemux86-64/scripts/run-qemu <imagename>
+    ../meta-updater/scripts/run-qemu-ota <imagename>
 
-This script will run 'core-image-minimal' by default if no image name is given.
+This script will run 'core-image-minimal' by default if no image name is given. Use `run-qemu-ota -h` for a list of command line options.
+
+In particular, you may create/use a qcow2-formatted storage overlay file for persistence. If you don't, any changes you make to the image will be lost as soon as qemu terminates. You can do this with `-o mylayer.cow`; that will create the file if it doesn't exist, and use it if it does.
