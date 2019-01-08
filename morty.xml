@@ -17,7 +17,7 @@
 	<project path="meta-updater-porter" name="advancedtelematic/meta-updater-porter" remote="github" revision="morty" />
 
 	<!-- BSP layers -->
-	<project path="meta-raspberrypi" name="meta-raspberrypi" remote="yocto" revision="380bf2ff445c2049bdea15f3bb36e8cb36540345" />
+	<project path="meta-raspberrypi" name="meta-raspberrypi" remote="yocto" revision="morty" />
 	<project name="meta-intel" path="meta-intel" remote="yocto" revision="morty" />
 	<project name="AGL/meta-renesas" path="meta-renesas" remote="agl" revision="master" />
 
