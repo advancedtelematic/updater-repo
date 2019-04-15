@@ -9,10 +9,11 @@ tool instead:
     repo init -u https://github.com/advancedtelematic/updater-repo.git
     repo sync -j8
 
-Install the OpenEmbedded build dependencies:
+Install the build dependencies for https://www.yoctoproject.org/docs/2.4/ref-manual/ref-manual.html#required-packages-for-the-host-development-system[OpenEmbedded] and https://github.com/advancedtelematic/meta-updater/[meta-updater]:
 
     sudo apt-get install gawk wget git-core diffstat unzip texinfo gcc-multilib \
-     build-essential chrpath socat libsdl1.2-dev xterm repo
+      build-essential chrpath socat cpio python python3 python3-pip \
+      python3-pexpect xz-utils debianutils iputils-ping repo default-jre
 
 A convenience script is provided to set up your environment to produce OTA-enabled image
 for your machine:
@@ -20,17 +21,21 @@ for your machine:
     source meta-updater/scripts/envsetup.sh <machine> # One of intel-corei7-64 (for Minnowboard), raspberrypi3, or qemux86-64
 
 
-Then you can build the required image (core-image-minimal is a good start)
+Then you can build the required image (`core-image-minimal` is a good start):
 
     bitbake core-image-minimal
 
 
-For instructions how to link the device to ATS Garage, see http://docs.atsgarage.com/start-yocto/your-first-ostreeenabled-yocto-project.html
+For instructions how to link the device to HERE OTA Connect, see https://docs.ota.here.com/quickstarts/start-intro.html[the official documentation].
 
 
-== Running the image (Minnowboard Max/Turbot)
+== Running the image on a real board
 
-Write the image with the following command (replace /dex/sdX with the correct device for your microSD card):
+We have https://github.com/advancedtelematic/meta-updater-raspberrypi/blob/master/scripts/flash-image.sh[a script to help you write the image to a microSD card (or other removable drive)]. You can instead do this manually if you prefer; see the instructions below.
+
+=== Minnowboard Max/Turbot
+
+Write the image with the following command (replace `/dex/sdX` with the correct device for your microSD card):
 
     sudo dd if=tmp/deploy/images/intel-corei7-64/core-image-minimal-intel-corei7-64.wic of=/dev/sdX bs=32M && sync
 
@@ -47,9 +52,9 @@ The image file Yocto generates is shrunk down to the smallest it can be. After w
 
 Now insert the microSD card in the Minnowboard Max and boot it.
 
-== Running the image (Raspberry Pi 3)
+=== Raspberry Pi 2 and 3
 
-Build the `rpi-basic-image`:
+Build the `rpi-basic-image` (note that as of thud, you should instead build `core-image-minimal`):
 
     bitbake rpi-basic-image
 
@@ -60,7 +65,7 @@ Write it to a SD card:
     sudo resize2fs /dev/sdX2
 
 
-== Running the image (Qemu)
+== Running the image with Qemu
 
     ../meta-updater/scripts/run-qemu-ota <imagename>
 
