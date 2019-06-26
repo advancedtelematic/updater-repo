@@ -17,8 +17,5 @@
 	<!-- BSP layers -->
 	<project path="meta-raspberrypi" name="meta-raspberrypi" remote="yocto" revision="master" />
 	<project name="meta-intel" path="meta-intel" remote="yocto" revision="master" />
-
-	<!-- Extra layers -->
-	<project path="meta-rust" name="meta-rust/meta-rust" remote="github" revision="505ba7a172a3694d259d768aa837a0060c415750"/>
 </manifest>
 
