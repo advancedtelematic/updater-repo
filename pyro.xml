@@ -5,21 +5,23 @@
 	<remote name="openembedded" fetch="git://git.openembedded.org/" />
 	<remote name="agl" fetch="https://gerrit.automotivelinux.org/gerrit/" />
 
+	<default remote="github" revision="pyro" />
+
 	<!-- Core layers: poky and meta-oe -->
-	<project path="poky" name="poky" remote="yocto" revision="pyro" />
-	<project name="meta-openembedded" path="meta-openembedded" remote="openembedded" revision="pyro" />
+	<project name="poky" remote="yocto" />
+	<project name="meta-openembedded" remote="openembedded" />
 
 	<!-- Updater layers -->
-	<project path="meta-updater" name="advancedtelematic/meta-updater" remote="github" revision="pyro" />
-	<project path="meta-updater-raspberrypi" name="advancedtelematic/meta-updater-raspberrypi" remote="github" revision="pyro" />
-	<project path="meta-updater-minnowboard" name="advancedtelematic/meta-updater-minnowboard" remote="github" revision="pyro" />
-	<project path="meta-updater-qemux86-64" name="advancedtelematic/meta-updater-qemux86-64" remote="github" revision="pyro" />
-	<project path="meta-updater-porter" name="advancedtelematic/meta-updater-porter" remote="github" revision="pyro" />
+	<project path="meta-updater" name="advancedtelematic/meta-updater" />
+	<project path="meta-updater-raspberrypi" name="advancedtelematic/meta-updater-raspberrypi" />
+	<project path="meta-updater-minnowboard" name="advancedtelematic/meta-updater-minnowboard" />
+	<project path="meta-updater-qemux86-64" name="advancedtelematic/meta-updater-qemux86-64" />
+	<project path="meta-updater-porter" name="advancedtelematic/meta-updater-porter" />
 
 	<!-- BSP layers -->
-	<project path="meta-raspberrypi" name="meta-raspberrypi" remote="yocto" revision="pyro" />
-	<project name="meta-intel" path="meta-intel" remote="yocto" revision="pyro" />
-	<project name="AGL/meta-renesas" path="meta-renesas" remote="agl" revision="master" />
+	<project name="meta-raspberrypi" remote="yocto" />
+	<project name="meta-intel" remote="yocto" />
+	<project name="AGL/meta-renesas" remote="agl" revision="master" />
 
 	<!-- Extra layers -->
 	<project path="meta-rust" name="meta-rust/meta-rust" remote="github" revision="505ba7a172a3694d259d768aa837a0060c415750"/>
