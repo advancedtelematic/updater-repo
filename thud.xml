@@ -17,7 +17,6 @@
 	<project path="meta-updater-qemux86-64" name="advancedtelematic/meta-updater-qemux86-64" />
 
 	<!-- BSP layers -->
-	<!-- meta-raspberrypi pinned to master for now, pending their release of 'thud' -->
-	<project name="meta-raspberrypi" remote="yocto" revision="master" />
+	<project name="meta-raspberrypi" remote="yocto" />
 	<project name="meta-intel" remote="yocto" />
 </manifest>
