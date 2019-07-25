@@ -15,10 +15,12 @@
 	<project path="meta-updater-raspberrypi" name="advancedtelematic/meta-updater-raspberrypi" />
 	<project path="meta-updater-minnowboard" name="advancedtelematic/meta-updater-minnowboard" />
 	<project path="meta-updater-qemux86-64" name="advancedtelematic/meta-updater-qemux86-64" />
+	<project path="meta-updater-riscv" name="ricardosalveti/meta-updater-riscv" />
 
 	<!-- BSP layers -->
 	<project name="meta-raspberrypi" remote="yocto" />
 	<project name="meta-intel" remote="yocto" />
+	<project path="meta-riscv" name="riscv/meta-riscv" />
 
 </manifest>
 
