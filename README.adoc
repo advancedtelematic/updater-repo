@@ -6,14 +6,13 @@ This repo is not to be cloned directly, use https://source.android.com/source/do
 tool instead:
 
     sudo apt-get install repo
-    repo init -u https://github.com/advancedtelematic/updater-repo.git
+    # You should specify a particular branch when initializing. Currently Thud (2.6)
+    # and Warrior (2.7) are supported; older ones are available but not actively
+    # maintained.
+    repo init -u https://github.com/advancedtelematic/updater-repo.git -m thud.xml
     repo sync -j8
 
-Install the build dependencies for https://www.yoctoproject.org/docs/2.4/ref-manual/ref-manual.html#required-packages-for-the-host-development-system[OpenEmbedded] and https://github.com/advancedtelematic/meta-updater/[meta-updater]:
-
-    sudo apt-get install gawk wget git-core diffstat unzip texinfo gcc-multilib \
-      build-essential chrpath socat cpio python python3 python3-pip \
-      python3-pexpect xz-utils debianutils iputils-ping repo default-jre
+Install the build dependencies for https://www.yoctoproject.org/docs/2.6/ref-manual/ref-manual.html#required-packages-for-the-build-host[OpenEmbedded] and https://github.com/advancedtelematic/meta-updater/[meta-updater]. See https://docs.ota.here.com/ota-client/dev/build-raspberry.html[the documentation portal] for more information.
 
 A convenience script is provided to set up your environment to produce OTA-enabled image
 for your machine:
