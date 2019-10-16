@@ -2,72 +2,24 @@
 
 == Getting started
 
-This repo is not to be cloned directly, use https://source.android.com/source/downloading.html[Android repo]
-tool instead:
+This repo is not intended to be cloned directly. Use the https://source.android.com/source/downloading.html[Android repo] tool instead:
 
-    sudo apt-get install repo
-    # You should specify a particular branch when initializing. Currently Thud (2.6)
-    # and Warrior (2.7) are supported; older ones are available but not actively
-    # maintained.
+    sudo apt install repo
     repo init -u https://github.com/advancedtelematic/updater-repo.git -m thud.xml
     repo sync -j8
 
+You should specify a particular branch when initializing. Currently Thud (2.6) and Warrior (2.7) are supported; older ones are available but not actively maintained. For more information about supported branches, please refer to the https://docs.ota.here.com/ota-client/latest/yocto-release-branches.html[documentation portal]
+
 Install the build dependencies for https://www.yoctoproject.org/docs/2.6/ref-manual/ref-manual.html#required-packages-for-the-build-host[OpenEmbedded] and https://github.com/advancedtelematic/meta-updater/[meta-updater]. See https://docs.ota.here.com/ota-client/dev/build-raspberry.html[the documentation portal] for more information.
 
-A convenience script is provided to set up your environment to produce OTA-enabled image
-for your machine:
+A convenience script is provided to set up your environment to produce OTA-enabled images for your target device:
 
-    source meta-updater/scripts/envsetup.sh <machine> # One of intel-corei7-64 (for Minnowboard), raspberrypi3, or qemux86-64
+    source meta-updater/scripts/envsetup.sh <machine>  # for example, raspberrypi3 or qemux86-64
 
+A list of supported boards can be found on the https://docs.ota.here.com/ota-client/latest/supported-boards.html[documentation portal].
 
-Then you can build the required image (`core-image-minimal` is a good start):
+Then you can build an image. `core-image-minimal` is a good start:
 
     bitbake core-image-minimal
 
-
-For instructions how to link the device to HERE OTA Connect, see https://docs.ota.here.com/quickstarts/start-intro.html[the official documentation].
-
-
-== Running the image on a real board
-
-We have https://github.com/advancedtelematic/meta-updater-raspberrypi/blob/master/scripts/flash-image.sh[a script to help you write the image to a microSD card (or other removable drive)]. You can instead do this manually if you prefer; see the instructions below.
-
-=== Minnowboard Max/Turbot
-
-Write the image with the following command (replace `/dex/sdX` with the correct device for your microSD card):
-
-    sudo dd if=tmp/deploy/images/intel-corei7-64/core-image-minimal-intel-corei7-64.wic of=/dev/sdX bs=32M && sync
-
-The image file Yocto generates is shrunk down to the smallest it can be. After writing it to your SD card, you’ll want to expand the partition and root filesystem so they use the whole disk:
-
-    sudo parted  /dev/sdX
-    (parted) resizepart
-    Warning: Not all of the space available to /dev/sdh appears to be used, you can fix the GPT to use all of the space (an extra 15346552 blocks) or continue with the current setting?
-    Fix/Ignore? fix
-    Partition number? 2
-    End?  [112MB]? 100%
-    (parted) quit
-    sudo resize2fs /dev/sdX2
-
-Now insert the microSD card in the Minnowboard Max and boot it.
-
-=== Raspberry Pi 2 and 3
-
-Build the `rpi-basic-image` (note that as of thud, you should instead build `core-image-minimal`):
-
-    bitbake rpi-basic-image
-
-Write it to a SD card:
-
-    sudo dd if=tmp/deploy/images/raspberrypi3/rpi-basic-image-raspberrypi3.rpi-sdimg-ota of=/dev/sdh bs=32M && sync
-    sudo parted -s /dev/sdX resizepart 2 '100%'
-    sudo resize2fs /dev/sdX2
-
-
-== Running the image with Qemu
-
-    ../meta-updater/scripts/run-qemu-ota <imagename>
-
-This script will run 'core-image-minimal' by default if no image name is given. Use `run-qemu-ota -h` for a list of command line options.
-
-In particular, you may create/use a qcow2-formatted storage overlay file for persistence. If you don't, any changes you make to the image will be lost as soon as qemu terminates. You can do this with `-o mylayer.cow`; that will create the file if it doesn't exist, and use it if it does.
+For more documentation on using these repos and https://connect.ota.here.com/[HERE OTA Connect], please see the https://docs.ota.here.com/[OTA Connect documentation portal].
