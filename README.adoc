@@ -26,6 +26,6 @@ For more documentation on using these repos and https://connect.ota.here.com/[HE
 
 == License
 
-This code is licensed under the link:COPYING.MIT[MIT license], a copy of which can be found in this repository. All code is copyright HERE Europe B.V., 2017-2019.
+This code is licensed under the link:COPYING.MIT[MIT license], a copy of which can be found in this repository. All code is copyright HERE Europe B.V., 2017-2020.
 
 We require that contributors accept the terms of Linux Foundation's link:https://developercertificate.org/[Developer Certificate of Origin]. Please see the https://github.com/advancedtelematic/aktualizr/blob/master/CONTRIBUTING.md[contribution instructions of aktualizr] for more information.
