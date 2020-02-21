@@ -8,7 +8,7 @@ This repo is not intended to be cloned directly. Use the https://source.android.
     repo init -u https://github.com/advancedtelematic/updater-repo.git -m thud.xml
     repo sync -j8
 
-You should specify a particular branch when initializing. Currently Thud (2.6) and Warrior (2.7) are supported; older ones are available but not actively maintained. For more information about supported branches, please refer to the https://docs.ota.here.com/ota-client/latest/yocto-release-branches.html[documentation portal]
+You should specify a particular branch when initializing. Currently, thud (2.6), warrior (2.7), and zeus (3.0) are supported; older ones are available but not actively maintained. For more information about supported branches, please refer to the https://docs.ota.here.com/ota-client/latest/yocto-release-branches.html[documentation portal]
 
 Install the build dependencies for https://www.yoctoproject.org/docs/2.6/ref-manual/ref-manual.html#required-packages-for-the-build-host[OpenEmbedded] and https://github.com/advancedtelematic/meta-updater/[meta-updater]. See https://docs.ota.here.com/ota-client/dev/build-raspberry.html[the documentation portal] for more information.
 
