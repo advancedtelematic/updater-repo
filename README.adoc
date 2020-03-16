@@ -5,7 +5,7 @@
 This repo is not intended to be cloned directly. Use the https://source.android.com/source/downloading.html[Android repo] tool instead:
 
     sudo apt install repo
-    repo init -u https://github.com/advancedtelematic/updater-repo.git -m thud.xml
+    repo init -u https://github.com/advancedtelematic/updater-repo.git -m zeus.xml
     repo sync -j8
 
 You should specify a particular branch when initializing. Currently, thud (2.6), warrior (2.7), and zeus (3.0) are supported; older ones are available but not actively maintained. For more information about supported branches, please refer to the https://docs.ota.here.com/ota-client/latest/yocto-release-branches.html[documentation portal]
