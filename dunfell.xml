@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+	<remote name="github" fetch="https://github.com" pushurl="ssh://git@github.com" />
+	<remote name="yocto" fetch="https://git.yoctoproject.org/git/" />
+	<remote name="openembedded" fetch="git://git.openembedded.org/" />
+
+	<default remote="github" revision="dunfell" />
+
+	<!-- Core layers: poky and meta-oe -->
+	<project name="poky" remote="yocto" revision="master" />
+	<project name="meta-openembedded" remote="openembedded" revision="master" />
+
+	<!-- Updater layers -->
+	<project path="meta-updater" name="advancedtelematic/meta-updater" />
+	<project path="meta-updater-raspberrypi" name="advancedtelematic/meta-updater-raspberrypi" />
+	<project path="meta-updater-minnowboard" name="advancedtelematic/meta-updater-minnowboard" />
+	<project path="meta-updater-qemux86-64" name="advancedtelematic/meta-updater-qemux86-64" />
+	<project path="meta-updater-riscv" name="ricardosalveti/meta-updater-riscv" revision="master" />
+
+	<!-- BSP layers -->
+	<project name="meta-raspberrypi" remote="yocto" />
+	<project name="meta-intel" remote="yocto" revision="master" />
+	<project path="meta-riscv" name="riscv/meta-riscv" revision="master" />
+
+</manifest>
+
