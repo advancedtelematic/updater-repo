@@ -7,8 +7,8 @@
 	<default remote="github" revision="dunfell" />
 
 	<!-- Core layers: poky and meta-oe -->
-	<project name="poky" remote="yocto" revision="master" />
-	<project name="meta-openembedded" remote="openembedded" revision="master" />
+	<project name="poky" remote="yocto" />
+	<project name="meta-openembedded" remote="openembedded" />
 
 	<!-- Updater layers -->
 	<project path="meta-updater" name="advancedtelematic/meta-updater" />
@@ -19,7 +19,7 @@
 
 	<!-- BSP layers -->
 	<project name="meta-raspberrypi" remote="yocto" />
-	<project name="meta-intel" remote="yocto" revision="master" />
+	<project name="meta-intel" remote="yocto" />
 	<project path="meta-riscv" name="riscv/meta-riscv" revision="master" />
 
 </manifest>
